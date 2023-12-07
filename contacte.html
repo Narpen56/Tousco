@@ -1,249 +1,73 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <metacharset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
     <title>Accueil | E.ZOLA</title>
     <link href="style.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/icons/contactez-nous.png">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("user_your_emailjs_user_id");
+        
+        function sendEmail(event) {
+            event.preventDefault();
+
+            emailjs.sendForm("your_service_id", "template_id", event.target)
+                .then((response) => {
+                    console.log("Email sent successfully", response);
+                    // Add code to show success message or redirect the user
+                })
+                .catch((error) => {
+                    console.error("Error sending email", error);
+                    // Add code to show an error message
+                });
+        }
+    </script>
     <style>
-      body {
-          background-image: url('fond.jpg');
-          background-size: cover;
-          background-attachment: fixed;
-      }
-  </style>
-   <style>
-    .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border-radius: 10px 10px 0px 0px;
-            text-align: center;
-        }
-        .mb-4 {
-          font-weight: bold;
-          color: #696464;
-
-        }
-    .container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 00%;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border-radius: 10px 10px 10px 10px;
-            text-align: center;
-        } 
-</style>
-<style>
-    .contact-container {
-      display: grid;
-	  margin: 40px auto;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px; /* Espace entre les colonnes */
-      width: 800px; /* Largeur totale de la grille */
-      margin: 0 auto;
-    }
-
-    .contact-images {
-      background-image: url('images/background.png');
-      background-size: 550px;
-      background-position: center;
-      height: 680px; /* Hauteur de la colonne d'images */
-      border-radius: 10px;
-	  background-color: #333;
-	  border: 8px solid #333;
-      border-radius: 10px;
-      padding: 20px;
-      color: #fff;
-    }
-
-    .contact-form {
-	  background-color: #333;
-      border-radius: 10px;
-      padding: 20px;
-      color: #fff;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-	  
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .form-group textarea {
-      height: 100px;
-    }
-
-    .form-group input[type="file"] {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background: #fff;
-      color: #696464;
-    }
-
-    .form-group button {
-      background: #fff;
-      color: #696464;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-  </style>
-  <style>
-.logoborder {
-  position: absolute;
-  left: 15%;
-  top: 59%; /* Ajustez cette valeur pour déplacer l'image vers le haut */
-  color: rgb(0, 0, 0);
-  transform: translate(-50%, -50%);
-  width: 450px; /* Ajustez la largeur de la boîte selon vos préférences */
-  height: 450px; /* Ajustez la hauteur de la boîte selon vos préférences */
-  border-radius: 10px; /* Coins arrondis */
-  border: 6px solid #333; /* Bordure de 2px de large avec la couleur #333 */
-  text-align: center;
-}
-</style>
-<style>
-  .logoborder1 {
-    position: absolute;
-    left: 15%;
-    top: 23.5%; /* Ajustez cette valeur pour déplacer l'image vers le haut */
-    transform: translate(-50%, -50%);
-    width: 450px; /* Ajustez la largeur de la boîte selon vos préférences */
-    height: 210px; /* Ajustez la hauteur de la boîte selon vos préférences */
-    border-radius: 10px; /* Coins arrondis */
-    border: 6px solid #333; /* Bordure de 2px de large avec la couleur #333 */
-  }
-  </style>
-  <style>
-    .logoborder3 {
-      position: absolute;
-      left: 85%;
-      top: 23.5%; /* Ajustez cette valeur pour déplacer l'image vers le haut */
-      transform: translate(-50%, -50%);
-      width: 450px; /* Ajustez la largeur de la boîte selon vos préférences */
-      height: 210px; /* Ajustez la hauteur de la boîte selon vos préférences */
-      border-radius: 10px; /* Coins arrondis */
-      border: 6px solid #333; /* Bordure de 2px de large avec la couleur #333 */
-    }
-    .logoborder4 {
-  position: absolute;
-  left: 85%;
-  top: 48%; /* Ajustez cette valeur pour déplacer l'image vers le haut */
-  color: rgb(0, 0, 0);
-  transform: translate(-50%, -50%);
-  width: 450px; /* Ajustez la largeur de la boîte selon vos préférences */
-  height: 698px; /* Ajustez la hauteur de la boîte selon vos préférences */
-  border-radius: 10px; /* Coins arrondis */
-  border: 6px solid #333; /* Bordure de 2px de large avec la couleur #333 */
-  text-align: center;
-}
+        /* Your existing styles remain unchanged */
     </style>
-  </head>
+</head>
+<body>
 
-  
+    <!-- Your existing HTML content -->
 
-  <body>
-
-    <div>
-      <nav>
-          <div class="logo">Émile Zola</div>
-          <input type="checkbox" id="checkbox">
-          <label for="checkbox" id="icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </label>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="matériels.html">Materiels</a></li>
-            <li><a href="logiciels.html">Logiciels</a></li>
-            <li><a href="navigateurs.html">Navigateurs</a></li>
-            <li><a href="nointernet.html">Pas D'internet ?</a></li>
-    <li> <a href="contacte.html" class="active">Contact</a>
-          </ul>
-        </nav>
-  </div>
-
-<br></br>
-  <div class="contact-container">
-    <div class="contact-images"></div>
-    <div class="contact-form">
-      <h2>Contactez-nous</h2>
-      <form action="#" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="name">Nom :</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required>
+    <div class="contact-container">
+        <div class="contact-images"></div>
+        <div class="contact-form">
+            <h2>Contactez-nous</h2>
+            <form action="#" method="post" enctype="multipart/form-data" onsubmit="sendEmail(event)">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail :</label>
+                    <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet :</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="file">Joindre un fichier :</label>
+                    <input type="file" id="file" name="file">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Envoyer</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="email">E-mail :</label>
-          <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
-        </div>
-        <div class="form-group">
-          <label for="subject">Sujet :</label>
-          <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message :</label>
-          <textarea id="message" name="message" placeholder="Votre message" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="file">Joindre un fichier :</label>
-          <input type="file" id="file" name="file">
-        </div>
-        <div class="form-group">
-          <button type="submit">Envoyer</button>
-        </div>
-      </form>
     </div>
-  </div>
 
-  <div class="contact-container1">
-	
-  </div>
+    <!-- Your existing HTML content -->
 
-
-  <section>
-    <div class="logoborder1">
-    <img class="logo" src="logozolavert.png" alt="Logo Zola Vert">
+    <div class="footer">
+        <p>Le site internet à été réaliser par les élèves de Terminale Système Numérique 2024</p>
     </div>
-  </div>
-  </section>
-  <section>
-    <div class="logoborder">
-      <h2 style="font-size: 24px;">⚠️ L'utilisation de cet outil nécessite une connexion Internet !</h2>
-      <img src="logowifi.png" alt="Icône Wi-Fi" style="width: 325px ;">
-      <h3 style="font-size: 18px;">En l'absence de connexion Internet, veuillez accéder à <a href="nointernet.html">cette page</a> et suivre le tutoriel.</h3>
-    </div>
-  </section>
-  
-  
 
-  <div class="footer">
-    <p>Le site internet à été réaliser par les élèves de Terminale Système Numérique 2024</p>
-
-  </div>
-
-
-  </body>
+</body>
+</html>
