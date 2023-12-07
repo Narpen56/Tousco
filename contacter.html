@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de contact</title>
-    <!-- Ajoutez la bibliothèque SMTP.js -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- Ajoutez la bibliothèque Email.js -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
+        // Initialisez Email.js avec votre ID utilisateur
+        emailjs.init("user_your_emailjs_user_id");
+
+        // Fonction pour envoyer l'e-mail
         function sendEmail() {
             // Récupérez les données du formulaire
             var name = document.forms["myForm"]["name"].value;
             var email = document.forms["myForm"]["email"].value;
             var message = document.forms["myForm"]["message"].value;
 
-            // Paramètres SMTP.js
-            var emailData = {
-                to: "narpenofficiel@gmail.com",
-                from: email,
-                subject: "Nouveau message du formulaire de contact",
-                body: "Nom: " + name + "\nAdresse e-mail: " + email + "\nMessage: " + message
+            // Paramètres du modèle pour Email.js
+            var templateParams = {
+                name: name,
+                email: email,
+                message: message
             };
 
-            // Utilisez SMTP.js pour envoyer l'e-mail
-            Email.send(emailData);
+            // Utilisez Email.js pour envoyer l'e-mail
+            emailjs.send("your_emailjs_service_id", "your_emailjs_template_id", templateParams)
+                .then(function(response) {
+                    console.log("E-mail envoyé avec succès", response);
+                }, function(error) {
+                    console.log("Erreur lors de l'envoi de l'e-mail", error);
+                });
 
             // Empêche le formulaire de se soumettre normalement
             return false;
